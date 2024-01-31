@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Video Form</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+      /* styles for error messages */
+      .error-message {
+        color: red;
+        font-weight: bold;
+        margin: 10px 0;
+      }
+
+      /* custom styles for the form */
+      body {
+        background-color:  #B0E0E6; /*#f5f5f5*/;
+        font-family: sans-serif;
+      }
+      .container {
+        max-width: 600px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 90vh;
+        background-color: #fff;
+        box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.1);
+        border-radius: 10px;
+
+      }
+      .form-header {
+        text-align: center;
+        margin-bottom: 50px;
+      }
+      .form-header h2 {
+        font-weight: 700;
+        font-size: 36px;
+        font-family: "Georgia", sans-serif;
+        margin-bottom: 20px;
+        color: #333;
+      }
+      .form-group {
+        width: 100%;
+        margin-bottom: 20px;
+      }
+      .form-group label {
+        font-weight: 600;
+        color: #666;
+        display: block;
+        margin-bottom: 5px;
+      }
+      .form-control-file {
+        height: auto;
+        padding: 10px;
+        border-radius: 5px;
+        border: none;
+        background-color: #ddd;
+        color: #333;
+        width: 100%;
+      }
+      .form-control-file:focus {
+        box-shadow: none;
+        border-color: transparent;
+      }
+      .btn-primary {
+        background-color: #47b4de;
+        border-color: #47b4de;
+        font-weight: 600;
+        padding: 10px 20px;
+        width: 100%;
+        transition: all 0.3s ease;
+      }
+      .btn-primary:hover, .btn-primary:focus {
+        background-color: #3f9fc1;
+        border-color: #3f9fc1;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container my-5">
+      <div class="form-header">
+        <!--<h1>Upload Video Form</h1>-->
+        <h2>Upload your video file<br> to start processing.</h2>
+      </div>
+      <form action="{{ url_for('save') }}" method="post" enctype="multipart/form-data" class="d-flex flex-column align-items-center justify-content-center">
+        <div class="form-group">
+          <label for="video">Select a video file:</label>
+          <input type="file" class="form-control-file" id="video" name="video" accept=".mp4,.avi,.mov" required>
+           <input type="hidden" name="">
+        </div>
+        <button type="submit" class="btn btn-primary mt-3">Detect Vehicles</button>
+      </form>
+
+      <div id="error-message" class="error-message" style="display: none;"></div>
+    </div>
+  </body>
+</html>
+
+    <!--  // display error message if file is too large
+      const MAX_FILE_SIZE = 1024 * 1024 * 100; // 100MB
+      const fileInput = document.querySelector('input[type="file"]');
+      const errorMessage = document.getElementById('error-message
+');
+      fileInput.addEventListener('change', (event) => {
+        const file = event.target.files[0];
+        if (file && file.size > MAX_FILE_SIZE) {
+          errorMessage.innerText = `File is too large (max size is ${MAX_FILE_SIZE / 1024 / 1024}MB)`;
+          errorMessage.style.display = 'block';
+        } else {
+          errorMessage.style.display = 'none';
+        }
+      });
+    </script>
+  </body>
+</html>
+-->
